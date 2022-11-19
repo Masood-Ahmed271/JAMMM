@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
 #components-layout-demo-side {
     height: 32px;
     margin: 16px;
@@ -82,7 +84,7 @@
 
     /* width: 287px;
     height: 43px; */
-    font: 'Abel';
+    font-family: 'Abel';
     font-weight: 500;
     font-size: 22px;
     line-height: 5px;
