@@ -1,3 +1,8 @@
+/*
+Project Description: A Fullstack application using Flask as backend, React as Frontend and MySQL as Database
+File Description: This file stores the queries for the database.
+
+*/
 CREATE USER 'backend'@'localhost' IDENTIFIED BY '123456';
 CREATE DATABASE Project;
 GRANT ALL PRIVILEGES ON Project.* TO 'backend'@'localhost';
