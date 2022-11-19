@@ -22,6 +22,8 @@ import LectureNotesTable from "../Tables/LectureNotesTable";
 import ProfessorTable from "../Tables/ProfessorTable";
 import TATable from "../Tables/TATable";
 import Share from "../Share/Share";
+// import 'https://fonts.googleapis.com/css2?family=Abel&display=swap';
+// import './assets/css/fonts.css'
 
 const { Header, Content, Sider, Footer } = Layout;
 function getItem(label, key, icon, children) {

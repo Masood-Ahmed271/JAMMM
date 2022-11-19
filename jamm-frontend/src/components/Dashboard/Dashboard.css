@@ -1,154 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Josefin+Sans:wght@300&family=Oswald:wght@300&family=Roboto&display=swap");
+
 #components-layout-demo-side {
-    height: 32px;
-    margin: 16px;
-    background: #ffffff;
+  height: 32px;
+  margin: 16px;
+  background: #ffffff;
 }
-  
+
+h1 {
+  font-family: 'Oswald' 'Times New Roman' !important;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+
 .site-layout .site-layout-background {
-    background: yellow;
+  background: yellow;
 }
 
 .Header {
-    /* background: #00DEA3;  */
-    background: none !important; 
-    /* display: flex; */
-    /* flex-direction: row;  */
-    /* justify-content: space-between; */
-    /* padding-top: 1%;  */
-    /* margin-bottom: 20px; */
+  /* background: #00DEA3;  */
+  background: none !important;
+  /* display: flex; */
+  /* flex-direction: row;  */
+  /* justify-content: space-between; */
+  /* padding-top: 1%;  */
+  /* margin-bottom: 20px; */
 }
 
 .sideBar {
-    background: #ffffff;
+  background: #ffffff;
 }
 
 .logo {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 5%;
 }
 
 .ant-menu-item-selected {
-    color: #00DEA3 !important;
+  color: #00dea3 !important;
 }
 
-.menuFooter{
-    background-color: #00DEA3;
-    border-radius: 20%;
-    margin: 9px;
-    padding: 15px;
-    width: 90%;
-    text-align: center;
-    position: absolute;
-    bottom: 5%;
+.menuFooter {
+  background-color: #00dea3;
+  border-radius: 20%;
+  margin: 9px;
+  padding: 15px;
+  width: 90%;
+  text-align: center;
+  position: absolute;
+  bottom: 5%;
 }
 
 .SignOutButton {
-    margin-bottom: 15%;
-    width: 70% !important;
-    margin-left: 10%;
-    background-color: #3D8B9C;
-    border: none;
-    color: #ffffff;
+  margin-bottom: 15%;
+  width: 70% !important;
+  margin-left: 10%;
+  background-color: #3d8b9c;
+  border: none;
+  color: #ffffff;
 }
 
-.ant-btn:hover, .ant-btn:focus {
-    color: #00DEA3;
-  }
+.ant-btn:hover,
+.ant-btn:focus {
+  color: #00dea3;
+}
 
 .Avatar {
-    width: 40px;
-    border-radius: 20%;
-    margin-left: 10px;
-    margin-bottom: 10px;
+  width: 40px;
+  border-radius: 20%;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 .WelcomeMessage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .NotificationArea {
-    display: flex;
-    flex-direction: row;
-    width: 25%;
-    justify-content: space-evenly;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 25%;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-#Name{
-    margin: 0;
-    padding: 0;
-    line-height: 0px;
+#Name {
+  margin: 0;
+  padding: 0;
+  line-height: 0px;
 }
 
-#loginDetails{
-    margin-top: -12px;
-    padding: 0;
+#loginDetails {
+  margin-top: -12px;
+  padding: 0;
 }
 
-
-
-
-.detailBox{
-    background-color: #ffffff;
-    padding: 2%;
-    /* width: 300px; */
-    height: 100px;
-    border-radius: 10%;
-    margin-right: 20px;
-    justify-content: center;
-    text-align: center;
-    /* box-shadow: 1px 2px 9px #F4AAB9; */
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, #F4AAB9 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+.detailBox {
+  background-color: #ffffff;
+  padding: 2%;
+  /* width: 300px; */
+  height: 100px;
+  border-radius: 10%;
+  margin-right: 20px;
+  justify-content: center;
+  text-align: center;
+  /* box-shadow: 1px 2px 9px #F4AAB9; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    #f4aab9 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .CourseMaterial {
-    background-color: #ffffff;
-    height: 100%;
-    width: 200px;
-    border-radius: 5%;
-    text-align: center;
-    /* box-shadow: 1px 2px 9px #F4AAB9; */
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, #F4AAB9 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background-color: #ffffff;
+  height: 100%;
+  width: 200px;
+  border-radius: 5%;
+  text-align: center;
+  /* box-shadow: 1px 2px 9px #F4AAB9; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    #f4aab9 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
-.timetable{
-    background-color: #ffffff;
-    height: 100vh;
-    width: 900px;
-    margin: 10px;
-    border-radius: 5%;
-    text-align: center;
-    /* box-shadow: 1px 2px 9px #F4AAB9; */
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, #F4AAB9 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+.timetable {
+  background-color: #ffffff;
+  height: 100vh;
+  width: 900px;
+  margin: 10px;
+  border-radius: 5%;
+  text-align: center;
+  /* box-shadow: 1px 2px 9px #F4AAB9; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    #f4aab9 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
-.upcomingLectures{
-    background-color: #ffffff;
-    /* height: 60vh; */
-    width: 900px;
-    margin: 50px;
-    border-radius: 5%;
-    text-align: center;
-    /* box-shadow: 1px 2px 9px #F4AAB9; */
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, #F4AAB9 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+.upcomingLectures {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 50px;
+  border-radius: 16px;
+  font-family: Oswald, 'Courier New', Courier, monospace;
+  object-fit: contain;
+
 }
 
-.classInNextHour{
+.upcomingLecsClasses{
     display: flex;
-    justify-content: space-between;
+    flex-direction:column;
+    text-align: start;
+
+
 }
 
-.classInHour{
-    margin-top: 20px;
-    background-color: #00DEA3;
+.upcomingLecsHeading{
+    position: relative;
+    top: -26px;
+
 }
 
-.signout{
-    position: sticky;
-    bottom: 0;
+.classInNextHour {
+  display: flex;
+  justify-content: space-between;
 }
 
+.classInHour {
+  margin-top: 20px;
+  background-color: #00dea3;
+}
+
+.signout {
+  position: sticky;
+  bottom: 0;
+}

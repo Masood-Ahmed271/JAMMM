@@ -12,7 +12,8 @@ faceCascade = cv2.CascadeClassifier('haarcascade/haarcascade_frontalface_default
 video_capture = cv2.VideoCapture(0)
 
 # Specify the `user_name` and `NUM_IMGS` here.
-user_name = "Jack"
+
+user_name = "Muhammed Mubeen"
 NUM_IMGS = 400
 if not os.path.exists('data/{}'.format(user_name)):
     os.mkdir('data/{}'.format(user_name))
