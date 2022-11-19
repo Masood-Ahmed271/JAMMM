@@ -1,13 +1,18 @@
-import urllib
+'''
+Project Description: A Fullstack application using Flask as backend, React as Frontend and MySQL as Database
+File Description: This file use the trained model to recognize the faces.
+
+'''
+
 import numpy as np
 import mysql.connector
 import cv2
 import pyttsx3
 import pickle
 from datetime import datetime
-import sys
 
-def loginSystem3():
+def loginSystem():
+
     # 1 Create database connection
     myconn = mysql.connector.connect(
     user='backend', password='123456', database='Project')
@@ -22,9 +27,8 @@ def loginSystem3():
     recognizer.read("train.yml")
 
     labels = {"person_name": 1}
-    oldPath = "labels.pickle"
-    # newPath = "../labels.pickle"
-    with open(oldPath, "rb") as f:
+    path = "labels.pickle"
+    with open(path, "rb") as f:
         labels = pickle.load(f)
         labels = {v: k for k, v in labels.items()}
 
@@ -80,15 +84,6 @@ def loginSystem3():
 
                 # If the student's information is found in the database
                 else:
-                    """
-                    Implement useful functions here.
-                    Check the course and classroom for the student.
-                        If the student has class room within one hour, the corresponding course materials
-                            will be presented in the GUI.
-                        if the student does not have class at the moment, the GUI presents a personal class 
-                            timetable for the student.
-
-                    """
                     # Update the data in database
                     update =  "UPDATE Student SET login_date=%s WHERE name=%s"
                     val = (date, current_name)
@@ -127,5 +122,5 @@ def loginSystem3():
     cv2.destroyAllWindows()
 
 if __name__ == "__main__":
-    ret = loginSystem3()
+    ret = loginSystem()
     print(ret)

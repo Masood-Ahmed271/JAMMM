@@ -1,16 +1,21 @@
-import urllib
+'''
+Project Description: A Fullstack application using Flask as backend, React as Frontend and MySQL as Database
+File Description: This file use the trained model to recognize the faces with GUI.
+
+'''
+
 import numpy as np
 import mysql.connector
 import cv2
 import pyttsx3
 import pickle
 from datetime import datetime
-import sys
 import PySimpleGUI as sg
 
 def loginSystem():
     # 1 Create database connection
-    myconn = mysql.connector.connect(host="localhost", user="root", passwd="03032085109", database="facerecognition")
+    myconn = mysql.connector.connect(
+    user='backend', password='123456', database='Project')
     date = datetime.utcnow()
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
@@ -97,15 +102,6 @@ def loginSystem():
 
                 # If the student's information is found in the database
                 else:
-                    """
-                    Implement useful functions here.
-                    Check the course and classroom for the student.
-                        If the student has class room within one hour, the corresponding course materials
-                            will be presented in the GUI.
-                        if the student does not have class at the moment, the GUI presents a personal class 
-                            timetable for the student.
-
-                    """
                     update =  "UPDATE Student SET login_date=%s WHERE name=%s"
                     val = (date, current_name)
                     cursor.execute(update, val)

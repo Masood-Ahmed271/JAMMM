@@ -1,3 +1,8 @@
+'''
+Project Description: A Fullstack application using Flask as backend, React as Frontend and MySQL as Database
+File Description: This file trains the data set for face recognition.
+
+'''
 import os
 import numpy as np
 from PIL import Image
