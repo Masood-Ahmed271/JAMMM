@@ -10,11 +10,11 @@
 
 .Header {
     /* background: #00DEA3;  */
-    background: #EFF3FD; 
-    display: flex;
-    flex-direction: row; 
-    justify-content: space-between;
-    padding-top: 1%; 
+    background: none !important; 
+    /* display: flex; */
+    /* flex-direction: row;  */
+    /* justify-content: space-between; */
+    /* padding-top: 1%;  */
     /* margin-bottom: 20px; */
 }
 

@@ -41,51 +41,7 @@ const Dashboard = () => {
     const [messages, setMessages] = useState(dashboardData.messages);
     const [materials, setMaterials] = useState(dashboardData.materials);
     const [collapsed, setCollapsed] = useState(false);
-
-    // useEffect(() => {
-    //     fetch("/dashboard")
-    //         .then((response) => {
-    //             if (response.ok) {
-    //                 return response.json();
-    //             }
-    //         })
-    //         .then((data) => {
-    //             setStudentDetails(data.studentDetails);
-    //             setClassSchedule(data.classSchedule);
-    //             setMessages(data.messages);
-    //             setMaterials(data.materials);
-
-    //             // finding classes starting within the next hour
-
-    //             var currDate = new Date();
-    //             var time_start = new Date();
-    //             var time_end = new Date();
-    //             var nextClasses = [];
-    //             var currTime = currDate.toString().split(" ")[4];
-    //             var value_start = currTime.split(":");
-    //             time_start.setHours(value_start[0], value_start[1], value_start[2], 0);
-
-    //             for (var i = 0; i < data.classSchedule.length; i++) {
-    //                 // var classTime = data.classSchedule[i].start_time;
-    //                 var classTime = "00:40:00";
-    //                 var value_end = classTime.split(":");
-    //                 time_end.setHours(value_end[0], value_end[1], value_end[2], 0);
-
-    //                 // if (data.classSchedule[i].day === currDate.getDay() && time_end - time_start < 3600000) {
-    //                 if (time_end - time_start < 3600000) {
-    //                     nextClasses.push(data.classSchedule[i]);
-    //                 }
-    //             }
-    //             setClassesInAnHour(nextClasses);
-    //         });
-    // }, []);
-
-    // if (
-    //     classSchedule.length > 0 &&
-    //     classesInAnHour.length > 0 &&
-    //     messages.length > 0 &&
-    //     materials.length > 0
-    // ) {
+    const [isClassInAnHour, setIsClassInAnHour] = useState(false);
 
     const fetchClassesInHour = () => {
         console.log("I am inside")
@@ -108,6 +64,7 @@ const Dashboard = () => {
                 nextClasses.push(classSchedule[i]);
             }
         }
+        // setIsClassInAnHour(true)
         return JSON.stringify(nextClasses);
     }
 
@@ -218,18 +175,20 @@ const Dashboard = () => {
                             </Row>
                             <Row>
                                 <Col span={12}>
-                                    <div className="timetable">
-                                        <h1>TimeTable</h1>
-                                        <Calender schedule={classSchedule} />
+                                    <div className="upcomingLectures">
+                                        <h1>Classes within the next hour</h1>
+                                        {console.log("checking >> ", JSON.parse(fetchClassesInHour()).length)}
+                                        {JSON.parse(fetchClassesInHour()).length > 0 ? 
+                                        <Table class="classInHour" columns={columns} dataSource={ClassInAnHourTableData(JSON.parse(fetchClassesInHour()))} size="small" pagination={{ pageSize: 5 }} />
+                                    : <h1 style={{height:"fit-content", padding:"auto"}}> No Classes within One Hour</h1>}
                                     </div>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col span={12}>
-                                    <div className="upcomingLectures">
-                                        {/* {console.log("Working >> ", JSON.parse(fetchClassesInHour()))} */}
-                                        <h1>Classes within the next hour</h1>
-                                        <Table class="classInHour" columns={columns} dataSource={ClassInAnHourTableData(JSON.parse(fetchClassesInHour()))} size="small" pagination={{ pageSize: 5 }} />
+                                    <div className="timetable">
+                                        <h1>TimeTable</h1>
+                                        <Calender schedule={classSchedule} />
                                     </div>
                                 </Col>
                             </Row>

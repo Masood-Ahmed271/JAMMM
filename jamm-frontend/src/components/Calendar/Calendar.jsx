@@ -55,12 +55,12 @@ for (var i = 0; i < 92; i++) {
     var month;
     var date;
 
-    if (i > 60) {
+    if (i >= 61) {
       month = 10;
-      date = i - 60;
-    } else if (i > 29) {
+      date = i - 61;
+    } else if (i >= 30) {
       month = 9;
-      date = i - 29;
+      date = i - 30;
     } else {
       month = 8;
       date = i;
@@ -75,7 +75,7 @@ for (var i = 0; i < 92; i++) {
         start: new Date(
           2022,
           month,
-          i,
+          date,
           parseInt(start_details[0]),
           parseInt(start_details[1]),
           parseInt(start_details[2])
@@ -83,7 +83,7 @@ for (var i = 0; i < 92; i++) {
         end: new Date(
           2022,
           month,
-          i,
+          date,
           parseInt(end_details[0]),
           parseInt(end_details[1]),
           parseInt(end_details[2])

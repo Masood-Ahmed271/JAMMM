@@ -1,7 +1,11 @@
 .calender {
-    font-family: sans-serif;
-    text-align: center;
-    height: 120vh;
-    object-fit: contain;
+  font-family: sans-serif;
+  text-align: center;
+  height: 120vh;
+  object-fit: contain;
 
-  }
+}
+
+.rbc-event{
+height: fit-content !important;
+}

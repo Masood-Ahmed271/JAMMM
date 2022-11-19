@@ -28,35 +28,30 @@ const Share = (props) => {
         .then((data) => {
             console.log(data)
             setcourseDetails(JSON.stringify(data))
-            // setAssignmentDeadlines(data.assignmentDeadlines)
-            // setLectureNotes(data.lectureNotes)
-            // setMessages(data.messages)
-            // setTutorialNotes(data.tutorialNotes)
-            // setZoomLinks(data.zoomLinks)
-            // setTeacher(data.teacher)
             var assignmentDeadlines = data.assignmentDeadlines
             var lectureNotes = data.lectureNotes
             var messages = data.messages
             var tutorialNotes = data.tutorialNotes
             var zoomLinks = data.zoomLinks 
             var teacher = data.teacher
-            console.log("teacher >> ", teacher)
-            var dataToBeSent = {}
-            
-            var JSONObject = courseDetails
-            let listToBeSent = []
-            listToBeSent.push(JSONObject)
-            listToBeSent.push(email)
-            // var sending = listToBeSent.toString()
-            // JSONObject = JSONObject.slice(0, -1) + ",emailToSend:{" + email + "}"
-            // JSONObject+="}"
-            // console.log("checking json object >> ", JSONObject)
+            console.log("teacher >> ", typeof teacher)
+            var emailSend = {"emailToSend": email}
+            var dataToBeSent = []
+            dataToBeSent.push(assignmentDeadlines)
+            dataToBeSent.push(lectureNotes)
+            dataToBeSent.push(messages)
+            dataToBeSent.push(tutorialNotes)
+            dataToBeSent.push(zoomLinks)
+            dataToBeSent.push(teacher)
+            dataToBeSent.push(emailSend)
+
+            console.log("The List >> ", dataToBeSent)
             fetch('/email', {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
                   },
-                body: listToBeSent,
+                body: JSON.stringify(dataToBeSent),
             }).then((response) => {
                 if (response.ok){
                     response.json()

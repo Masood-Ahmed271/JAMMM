@@ -82,6 +82,7 @@ const CourseDetails = () => {
                     <div>
                         <Share course={courseName}/>
                     </div>
+                    <h1>Instructor Details</h1>
                     <Row className="CourseBoxes twoBoxes" >
                         <Col span={10}>
                             <ProfessorTable title={teacher[0].title} name={teacher[0].name} role={teacher[0].role} Email={teacher[0].email} location={teacher[0].office_location} officeTiming={officeTimingProfessor}/>
