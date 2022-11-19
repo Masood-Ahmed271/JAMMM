@@ -1,0 +1,44 @@
+(FOR MAC)
+Download mySQL from:
+            https://dev.mysql.com/downloads/mysql/
+
+Install as default.
+
+Set the user password and don't forget it.
+
+Open the mySQL and run the server from the system settings.
+
+Now search in the spotlight search /usr 
+Then move into /local/MySQL/bin/ and copy the path.
+
+Then open terminal. 
+Find .bash_profile or .zprofile or .zshrc
+Then paste the following code:
+            # For mySQL
+            export PATH=${PATH}:/usr/local/mysql-8.0.31-macos12-arm64/bin
+            export PATH="/usr/local/mysql/bin:$PATH"
+
+You can put the path accordingly yours.
+You can those files using the following command:
+            open -t .{filename}
+
+then do:
+        source ~/.{filename}
+    
+Then try:
+        mysql -u root -p 
+And then the put the password of the root user that you have setup.
+
+Now:
+    # create database.
+    #'mysql>' indicates we are now in the mysql command line
+    mysql> CREATE DATABASE facerecognition;
+    mysql> USE facerecognition;
+
+    # import from sql file
+    mysql> source absolutepath/facerecognition.sql
+    e.g --> mysql> source /Users/masoodahmed/Desktop/SQL_SQL_SQL/jamm-backend/FaceRecognitioin/facerecognition.sql
+
+Mysql command to see what tables you have:
+    SHOW TABLES;
+
