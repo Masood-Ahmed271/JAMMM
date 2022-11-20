@@ -18,30 +18,6 @@ const HomePage = () => {
 
     const [loginStatus, setLoginStatus] = useState(false)
 
-    //  Old Method sending one api request
-    // const loginRedirect = (data, ) =>{
-    //     // console.log("DASHBOARD dATA >> ", dataDashboard)
-    //     if (data["login"] === "Success"){
-    //         navigate('/dashboard',{state:{name:data["name"], date:data["date"]}});
-    //         return;
-    //         }
-    //     alert("The person is not recognized");
-    //     setLoginStatus(false)
-    //     return;        
-    // }
-
-    // const login = () => {
-    //     fetch('/login').then(response => {
-    //         if (response.ok){
-    //             console.log("Response >> Success " )
-    //             return response.json()
-    //         }
-    //         console.log("Response >> error")
-    //     }).then( (data) => loginRedirect(data)).catch(
-    //         err => console.log(err)
-    //     )
-    // }
-
     const loginRedirect = (data, dataDashboard) =>{
         console.log("DASHBOARD dATA >> ", dataDashboard)
         if (data["login"] === "Success"){
