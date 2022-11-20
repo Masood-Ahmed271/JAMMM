@@ -138,6 +138,7 @@ h1 {
     background-color: #3d8b9c;
     color: white;
     border: 0;
+    margin: 5px;
 }
 
 .courseDetailsButton:hover {
