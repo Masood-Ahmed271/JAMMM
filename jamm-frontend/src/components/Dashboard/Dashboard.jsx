@@ -14,8 +14,6 @@ import Clock from "../Clock/Clock";
 import Calender from "../Calendar/Calendar";
 import Signout from "../Signout/Signout";
 import CustomHeader from "../CustomHeader/CustomHeader";
-import Share from "../Share/Share";
-// import 'https://fonts.googleapis.com/css2?family=Abel&display=swap';
 const { Header, Content, Sider, Footer } = Layout;
 
 function getItem(label, key, icon, children) {
@@ -32,14 +30,9 @@ const items = [getItem("Dashboard", "1", <DashboardOutlined />)];
 const Dashboard = () => {
   const { state } = useLocation();
   const { name, date, dashboardData, loginTimeOfUser } = state;
-  console.log("Daashboard data inside dashbaord >> ", dashboardData);
   const navigate = useNavigate();
   const [studentDetails, setStudentDetails] = useState(
     dashboardData.studentDetails
-  );
-  console.log(
-    "tHESE are student details ",
-    String(studentDetails.login_date).slice(0, 16)
   );
   const [classSchedule, setClassSchedule] = useState(
     dashboardData.classSchedule
@@ -51,7 +44,6 @@ const Dashboard = () => {
   const [isClassInAnHour, setIsClassInAnHour] = useState(false);
 
   const fetchClassesInHour = () => {
-    console.log("I am inside");
     var currDate = new Date();
     var time_start = new Date();
     var time_end = new Date();
@@ -65,21 +57,12 @@ const Dashboard = () => {
       // var classTime = "00:40:00";
       var value_end = classTime.split(":");
       time_end.setHours(value_end[0], value_end[1], value_end[2], 0);
-
-      // if (data.classSchedule[i].day === currDate.getDay() && time_end - time_start < 3600000) {
-      if (
-        classSchedule[i].day === currDate.getDay() &&
-        time_end - time_start < 3600000
+      if ( classSchedule[i].day === currDate.getDay() &&
+        time_end - time_start < 3600000 && time_end - time_start > 0
       ) {
         nextClasses.push(classSchedule[i]);
       }
-      // if (
-      //   time_end - time_start < 3600000
-      // ) {
-      //   nextClasses.push(classSchedule[i]);
-      // }
     }
-    // setIsClassInAnHour(true)
     return JSON.stringify(nextClasses);
   };
 
@@ -205,11 +188,7 @@ const Dashboard = () => {
                         Classes within the next hour
                       </h1>
                     </div>
-                    <div className="upcomingLecsClasses">
-                      {console.log(
-                        "checking >> ",
-                        JSON.parse(fetchClassesInHour()).length
-                      )}
+                    <div className="upcomingLecturesClasses">
                       {JSON.parse(fetchClassesInHour()).length > 0 ? (
                         <Table
                           class="classInHour"
