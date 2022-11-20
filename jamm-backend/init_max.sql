@@ -313,7 +313,7 @@ VALUES
 ("M15", "CL001", "tutorial 3 ERD", "https://connecthkuhk-my.sharepoint.com/:b:/g/personal/masood20_connect_hku_hk/Efho2_iHM8RDrtmxowZSMVMBami1YSe8yNFrT5Xuzi192g?e=KqToWp", NULL),
 ("M16", "CL010", "Problem Set 2", "https://moodle.hku.hk/pluginfile.php/4068393/mod_assign/introattachment/0/MATH3906A-2022-Assignment1_final.pdf?forcedownload=1", NULL),
 ("M17", "CL010", "Problem Set 3", "https://moodle.hku.hk/pluginfile.php/4068393/mod_assign/introattachment/0/MATH3906A-2022-Assignment1_final.pdf?forcedownload=1", NULL),
-("M18", "CL001", "Group Project", "https://moodle.hku.hk/mod/resource/view.php?id=2652160", NULL);
+("M18", "CL001", "Group Project", "https://moodle.hku.hk/mod/resource/view.php?id=2652160", NULL),
 #MATH3906 Notes
 ("M19", "CL010", "Discrete Time Option Pricing", "https://moodle.hku.hk/mod/resource/view.php?id=26684654", NULL),
 ("M20", "CL010", "Stochastic Calculus I", "https://moodle.hku.hk/mod/resource/view.php?id=2575354", NULL),
