@@ -5,22 +5,27 @@ File Description: This file handles the backend routes and api calls to support 
 '''
 
 # importing necessary libraries
-from flask import Flask, session, redirect, url_for, jsonify, request       # To connect and use flask
-import mysql.connector                                                      # To connect and use mySQL
+# To connect and use flask
+from flask import Flask, session, redirect, url_for, jsonify, request
+# To connect and use mySQL
+import mysql.connector
 
 # use for face recognition
 import cv2
 import pyttsx3
 import pickle
 
-from datetime import datetime                                               # To modify and handle date and time
-import smtplib                                                              # To handle sending/sharing of emails to the user
+# To modify and handle date and time
+from datetime import datetime
+# To handle sending/sharing of emails to the user
+import smtplib
 
 # Initialising the flask app
 app = Flask(__name__)
 
 # To create sessions (hashed with SHA256 Algorithm)
-app.secret_key = "16c9492dea11b3220687da4396ef9b4dc2bf6066f2aa53fdebf87610bad7c33a"  # for the cookie
+# for the cookie
+app.secret_key = "16c9492dea11b3220687da4396ef9b4dc2bf6066f2aa53fdebf87610bad7c33a"
 
 # Create database connection
 conn = mysql.connector.connect(
@@ -35,6 +40,8 @@ Param: None
 Return: String
 
 '''
+
+
 def loginSystem():
     # 1 Get time info from user
     date = datetime.utcnow()
@@ -69,7 +76,6 @@ def loginSystem():
             gray, scaleFactor=1.5, minNeighbors=5)
 
         for (x, y, w, h) in faces:
-            print(x, w, y, h)
             roi_gray = gray[y:y + h, x:x + w]
             roi_color = frame[y:y + h, x:x + w]
             # predict the id and confidence for faces
@@ -321,14 +327,28 @@ def courseDetails(course_id):
 @app.route('/email', methods=["POST"])
 def send_email():
     myData = request.get_json()
-    print(myData)
     email = myData[-1]['emailToSend']
-    print(email)
     emailSending = ""
     for i in range(0, len(myData) - 1):
-        print(i)
-        print(myData[i])
-        emailSending += str(myData[i])
+        if isinstance(myData[i], list):
+            try:
+                for j in myData[i]:
+                    printData = ""
+                    for key in j:
+                        printData += str(key) + " => " + str(j[key]) + ", "
+                    emailSending += printData + "\n"
+            except:
+                pass
+        elif isinstance(myData[i], dict):
+            printData = ""
+            for key in myData[i]:
+                if myData[i][key] == None:
+                    break
+                try:
+                    printData += str(key) + " => " + str(myData[i][key]) + ", "
+                except:
+                    pass
+            emailSending += printData + " \n"
 
     toaddr = email
     cc = [email]
@@ -338,8 +358,8 @@ def send_email():
     server = smtplib.SMTP("smtp-mail.outlook.com", 587)
     server.starttls()
     # This email is used to send emails to the users
-    server.login("jammcomp3278@outlook.com", "&&$$123JAMM")
-    server.sendmail("jammcomp3278@outlook.com", toaddrs, message)
+    server.login("jammmDevelopmentTeam@outlook.com", "&&$$123JAMMM")
+    server.sendmail("jammmDevelopmentTeam@outlook.com", toaddrs, message)
     server.quit()
     return {
         "Success": "Email Sent",
