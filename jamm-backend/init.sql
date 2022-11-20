@@ -157,16 +157,16 @@ VALUES
 
 INSERT INTO Class (class_id, course_id, zoom_link, zoom_meeting_id, zoom_password, tzoom_link, tzoom_meeting_id, tzoom_password, section)
 VALUE
-("CL001", "COMP3278", "https://hku.zoom.us/3062470030624770", "912 3456 7890", "305632", NULL, NULL, NULL, "1A"),
-("CL002", "COMP3230", "https://hku.zoom.us/306247003062wodfh770", "912 5465 1234", "123456", NULL, NULL, NULL, "1A"),
-("CL003", "COMP3314", "https://hku.zoom.us/sdfksjdhf89338f0", "928 1234 9756", "456786", "https://hku.zoom.us/sdpqwaadoienksjdhf89338f0", "918 3217 4567", "312164", "1A"),
-("CL004", "COMP3297", "https://hku.zoom.us/s30456435486969f89338f0", "900 1246 9187", "123468", "https://hku.zoom.us/306247003062wodfh770", "912 5465 1234", "123456", "1A"),
-("CL005", "STAT3603", "https://hku.zoom.us/sdpqwaadoienksjdhf89338f0", "918 3217 4567", "312164", NULL, NULL, NULL, "1A"),
-("CL006", "STAT3609", "https://hku.zoom.us/siasdaisd6765asdjs_dsds", "978 4567 1345", "312246", NULL, NULL, NULL, "1A"),
-("CL007", "STAT3609", "https://hku.zoom.us/siasdaisd6765asdjs_dsds", "978 4567 1345", "312246", "https://hku.zoom.us/sdpqwaadoienksjdhf89338f0", "918 3217 4567", "312164", "1B"),
-("CL008", "MATH3601", "https://hku.zoom.us/123a2sdasiasdkjs338f0", "968 4567 1234", "3424564", NULL, NULL, NULL, "1A"),
-("CL009", "MATH3601", "https://hku.zoom.us/12fgamsoicasc156748s0", "918 7287 6059", "8679467", NULL, NULL, NULL, "1B"),
-("CL010", "MATH3906", "https://hku.zoom.us/546002492491200", "974 6902 6945", "986902", "https://hku.zoom.us/12fgamsoicasc156748s0", "918 7287 6059", "8679467", "1A");
+("CL001", "COMP3278", "https://zoom.us/test", "912 3456 7890", "305632", 'https://zoom.us/test', '536 2837 6928', '123321', "1A"),
+("CL002", "COMP3230", "https://zoom.us/test", "912 5465 1234", "123456", NULL, NULL, NULL, "1A"),
+("CL003", "COMP3314", "https://zoom.us/test", "928 1234 9756", "456786", "https://hku.zoom.us/sdpqwaadoienksjdhf89338f0", "918 3217 4567", "312164", "1A"),
+("CL004", "COMP3297", "https://zoom.us/test", "900 1246 9187", "123468", "https://hku.zoom.us/306247003062wodfh770", "912 5465 1234", "123456", "1A"),
+("CL005", "STAT3603", "https://zoom.us/test", "918 3217 4567", "312164", NULL, NULL, NULL, "1A"),
+("CL006", "STAT3609", "https://zoom.us/test", "978 4567 1345", "312246", NULL, NULL, NULL, "1A"),
+("CL007", "STAT3609", "https://zoom.us/test", "978 4567 1345", "312246", "https://hku.zoom.us/sdpqwaadoienksjdhf89338f0", "918 3217 4567", "312164", "1B"),
+("CL008", "MATH3601", "https://zoom.us/test", "968 4567 1234", "3424564", NULL, NULL, NULL, "1A"),
+("CL009", "MATH3601", "https://zoom.us/test", "918 7287 6059", "8679467", NULL, NULL, NULL, "1B"),
+("CL010", "MATH3906", "https://zoom.us/test", "974 6902 6945", "986902", "https://hku.zoom.us/12fgamsoicasc156748s0", "918 7287 6059", "8679467", "1A");
 
 INSERT INTO Room (room_id, bldg_name, room_no) 
 VALUES
@@ -273,22 +273,22 @@ VALUES
 
 INSERT INTO Material (material_id, class_id, name, content_link, description)
 VALUES
-("M01", "CL001", "Lecture 1 Intro to DBMS", "https://moodle.hku.hk/mod/resource/view.php?id=2665229", NULL),
-("M02", "CL001", "Lecture 2 Entity-Relationship Modeling", "https://moodle.hku.hk/mod/resource/view.php?id=2694930", NULL),
-("M03", "CL001", "Lecture 3 ER Design", "https://moodle.hku.hk/mod/resource/view.php?id=2703589", NULL),
-("M04", "CL001", "Group Discussion", "https://moodle.hku.hk/mod/resource/view.php?id=2704892", NULL),
-("M05", "CL001", "Lecture 4 SQL", "https://moodle.hku.hk/mod/resource/view.php?id=2713210", NULL),
-("M06", "CL001", "Lecture 5 SQL_II", "https://moodle.hku.hk/mod/resource/view.php?id=2724438", NULL),
-("M07", "CL001", "Assignment1", "https://moodle.hku.hk/pluginfile.php/4068393/mod_assign/introattachment/0/COMP3278A-2022-Assignment1_final.pdf?forcedownload=1", "Please submit your work in a single PDF file on Moodle before the deadline. Late penalty will be applied for late submission. For each of the tasks in question 2, the SQL query and the query results of MySQL (e.g. screenshot) should be provided."),
-("M08", "CL001", "Assignment2", "https://moodle.hku.hk/pluginfile.php/4148005/mod_assign/introattachment/0/COMP3278A-2022-Assignment2.pdf?forcedownload=1", "Please submit your answers in a single PDF file on Moodle before the deadline. Late penalty will be applied for late submission. Plagiarism tools will be applied to each submission."),
+("M01", "CL001", "Lecture 1 Intro to DBMS", "https://connecthkuhk-my.sharepoint.com/:b:/g/personal/masood20_connect_hku_hk/EcVLUPfXrSBPkiBGdeZSv0cBCTCsyZbKZQF2g4aavCG2yQ?e=Q3JfYF", NULL),
+("M02", "CL001", "Lecture 2 Entity-Relationship Modeling", "https://connecthkuhk-my.sharepoint.com/:b:/g/personal/masood20_connect_hku_hk/EQTCFwf4hedAhDOYQcW0CjQB26N3BjakjDAHb7zntbDcvA?e=tH40gg", NULL),
+("M03", "CL001", "Lecture 3 ER Design", "https://connecthkuhk-my.sharepoint.com/:b:/g/personal/masood20_connect_hku_hk/EVuk-TP9r_JNj_2hD1iBOaQBhP16r9yZLAgcv7eaePGbQg?e=1uu9aZ", NULL),
+("M04", "CL001", "Group Discussion", "https://connecthkuhk-my.sharepoint.com/:b:/g/personal/masood20_connect_hku_hk/EY9jBwgUAnZLhMdhNxn3oB4BiyqLWeE7zcb98TDjv1a5pQ?e=LGEPDz", NULL),
+("M05", "CL001", "Lecture 4 SQL", "https://connecthkuhk-my.sharepoint.com/:b:/g/personal/masood20_connect_hku_hk/EaTMdB1lrpZNq4tMyvrddcsBGuJI_qjTsEomRQpGV1sKXA?e=TLysiv", NULL),
+("M06", "CL001", "Lecture 5 SQL_II", "https://connecthkuhk-my.sharepoint.com/:b:/g/personal/masood20_connect_hku_hk/ERfaj0csd89FiLeVme6UQWoBicTzR_kJBO1Q7Y0FZjP_-g?e=omUPWE", NULL),
+("M07", "CL001", "Assignment1", "https://connecthkuhk-my.sharepoint.com/:b:/g/personal/masood20_connect_hku_hk/EUqxUpcR7fVKreKlKVGk5FoBKAkFnp9QYen_RtM78FzyQw?e=emn8Yt", "Please submit your work in a single PDF file on Moodle before the deadline. Late penalty will be applied for late submission. For each of the tasks in question 2, the SQL query and the query results of MySQL (e.g. screenshot) should be provided."),
+("M08", "CL001", "Assignment2", "https://connecthkuhk-my.sharepoint.com/:b:/g/personal/masood20_connect_hku_hk/EfNFM_uWRp9PmzWfVAlzCCIBo1x_fZ9Qtz8hWJDpyHn_PQ?e=PTeWSO", "Please submit your answers in a single PDF file on Moodle before the deadline. Late penalty will be applied for late submission. Plagiarism tools will be applied to each submission."),
 #Newly added start
 ("M09", "CL004", "Group Project", "https://moodle.hku.hk/mod/resource/view.php?id=2704892", NULL),
-("M10", "CL004", "Assignment2", "https://moodle.hku.hk/pluginfile.php/4068393/mod_assign/introattachment/0/COMP3297A-2022-Assignment1_final.pdf?forcedownload=1", NULL),
-("M11", "CL001", "tutorial 1 MySQL", "https://moodle.hku.hk/mod/resource/view.php?id=2668112", NULL),
-("M12", "CL001", "tutorial 2-0 project introduction", "https://moodle.hku.hk/mod/resource/view.php?id=2696843", NULL),
-("M13", "CL001", "tutorial 2-1 python MySQL", "https://moodle.hku.hk/mod/resource/view.php?id=2695689", NULL),
-("M14", "CL001", "tutorial 2-2 python GUI", "https://moodle.hku.hk/mod/resource/view.php?id=2695690", NULL),
-("M15", "CL001", "tutorial 3 ERD", "https://moodle.hku.hk/mod/resource/view.php?id=2709094", NULL),
+("M10", "CL004", "Assignment2", "https://connecthkuhk-my.sharepoint.com/:b:/g/personal/masood20_connect_hku_hk/EfNFM_uWRp9PmzWfVAlzCCIBo1x_fZ9Qtz8hWJDpyHn_PQ?e=PTeWSO", NULL),
+("M11", "CL001", "tutorial 1 MySQL", "https://connecthkuhk-my.sharepoint.com/:b:/g/personal/masood20_connect_hku_hk/EZyjZ4NzaEtAr1FxT1PEm3oB30m9xDSZpiluu_v_SKmmaw?e=cflUle", NULL),
+("M12", "CL001", "tutorial 2-0 project introduction", "https://connecthkuhk-my.sharepoint.com/:b:/g/personal/masood20_connect_hku_hk/Ef_P0sEam6RLtb6L4-iPq3gBjQCOEAljVRjw-K1J_dl8Ug?e=0BlXAl", NULL),
+("M13", "CL001", "tutorial 2-1 python MySQL", "https://connecthkuhk-my.sharepoint.com/:b:/g/personal/masood20_connect_hku_hk/Eczrg0J8KtRNg0eY_HmHEXMB-X4pc28SM16XhvGG2-DBKg?e=zFgWuk", NULL),
+("M14", "CL001", "tutorial 2-2 python GUI", "https://connecthkuhk-my.sharepoint.com/:b:/g/personal/masood20_connect_hku_hk/ETg4HD7VHStPmMtcLXn9898B-NCOfMHdT3vFljJ_WDQ5RQ?e=16vq9A", NULL),
+("M15", "CL001", "tutorial 3 ERD", "https://connecthkuhk-my.sharepoint.com/:b:/g/personal/masood20_connect_hku_hk/Efho2_iHM8RDrtmxowZSMVMBami1YSe8yNFrT5Xuzi192g?e=KqToWp", NULL),
 ("M16", "CL010", "Problem Set 2", "https://moodle.hku.hk/pluginfile.php/4068393/mod_assign/introattachment/0/MATH3906A-2022-Assignment1_final.pdf?forcedownload=1", NULL),
 ("M17", "CL010", "Problem Set 3", "https://moodle.hku.hk/pluginfile.php/4068393/mod_assign/introattachment/0/MATH3906A-2022-Assignment1_final.pdf?forcedownload=1", NULL),
 ("M18", "CL001", "Group Project", "https://moodle.hku.hk/mod/resource/view.php?id=2652160", NULL);
