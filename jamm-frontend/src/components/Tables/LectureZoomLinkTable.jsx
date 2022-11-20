@@ -10,7 +10,7 @@ const LectureZoomLinkTable = (props) => {
             dataIndex: 'Link',
             render: (dataIndex) => (
               <>
-              <a href={dataIndex}>{dataIndex}</a>
+              <a href={dataIndex} target="_blank" >{dataIndex}</a>
               </>
           )
           },

@@ -15,7 +15,7 @@ const LectureNotesTable = (props) => {
             dataIndex: 'Link',
             render: (dataIndex) => (
                 <>
-                    <form action={dataIndex} style={{display:"flex",justifyContent:"end"}}>
+                    <form action={dataIndex} target="_blank" style={{display:"flex",justifyContent:"end"}}>
                         <button class="">Access</button>
                     </form>
                 </>
