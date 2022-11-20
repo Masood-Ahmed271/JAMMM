@@ -1,0 +1,14 @@
+.clock {
+    /* border: 1px solid lightblue; */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 8px;
+
+    font-size: 8px;
+}
+
+.signOutInfo{
+    position: absolute;
+    bottom: 29%;
+    left: 5%;
+    text-align: center;
+}

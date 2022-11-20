@@ -105,8 +105,11 @@ for (var i = 0; i < 92; i++) {
         events={allEvents}
         localizer={localizer}
         views={views}
-        startAccessor="start"
-        endAccessor="end"
+        // timeslots={5}
+        // step={50}
+        min={new Date(2020, 10, 0, 9, 0, 0)}
+        max={new Date(2023, 10, 0, 21,0,0)}
+
         style={{
           height: "80%",
           width: "95%",

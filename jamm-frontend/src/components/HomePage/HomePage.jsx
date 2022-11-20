@@ -45,7 +45,8 @@ const HomePage = () => {
     const loginRedirect = (data, dataDashboard) =>{
         console.log("DASHBOARD dATA >> ", dataDashboard)
         if (data["login"] === "Success"){
-            navigate('/dashboard',{state:{name:data["name"], date:data["date"], dashboardData:dataDashboard}});
+            var loginTimeOfUser = Date.now()
+            navigate('/dashboard',{state:{name:data["name"], date:data["date"], dashboardData:dataDashboard, loginTimeOfUser:loginTimeOfUser}});
             return;
             }
         alert("The person is not recognized");
