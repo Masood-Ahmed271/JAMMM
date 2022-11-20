@@ -19,7 +19,6 @@ const HomePage = () => {
     const [loginStatus, setLoginStatus] = useState(false)
 
     const loginRedirect = (data, dataDashboard) =>{
-        console.log("DASHBOARD dATA >> ", dataDashboard)
         if (data["login"] === "Success"){
             var loginTimeOfUser = Date.now()
             navigate('/dashboard',{state:{name:data["name"], date:data["date"], dashboardData:dataDashboard, loginTimeOfUser:loginTimeOfUser}});

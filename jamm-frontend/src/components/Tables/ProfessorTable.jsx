@@ -76,7 +76,6 @@ const ProfessorTable = (props) => {
 
         }
     ]
-        console.log(props.location);
         return dataOfMessages;
     }
     return (

@@ -4,7 +4,7 @@ import { Table } from "antd";
 const LectureNotesTable = (props) => {
 
     const ClassMaterial = props.ClassMaterialData
-    console.log(props.ClassMaterialData);
+    
     const columns = [
         {
             title: 'Class Material',

@@ -11,15 +11,8 @@ import './share.css'
 const Share = (props) => {
 
     const [courseDetails, setcourseDetails] = useState("")
-    // const [assignmentDeadlines, setAssignmentDeadlines] = useState("")
-    // const [lectureNotes, setLectureNotes] = useState("")
-    // const [messages, setMessages] = useState("")
-    // const [tutorialNotes, setTutorialNotes] = useState("")
-    // const [zoomLinks, setZoomLinks] = useState("")
-    // const [teacher, setTeacher] = useState("")
 
     const sendEmailRequest = (course, email) => {
-        console.log("On Click")
         fetch(`/coursedetails/${course}`)
         .then((response) => {
             if (response.ok) {
@@ -35,7 +28,7 @@ const Share = (props) => {
             var tutorialNotes = data.tutorialNotes
             var zoomLinks = data.zoomLinks 
             var teacher = data.teacher
-            console.log("teacher >> ", typeof teacher)
+
             var emailSend = {"emailToSend": email}
             var dataToBeSent = []
             dataToBeSent.push(assignmentDeadlines)
@@ -58,7 +51,7 @@ const Share = (props) => {
                     response.json()
                 }
             }).then((data) => {
-                console.log(" EMail Data >> ", data["Success"])
+                console.log(" Email Data >> ", data["Success"])
             }).catch(err => {
                 console.log(err)
             })
