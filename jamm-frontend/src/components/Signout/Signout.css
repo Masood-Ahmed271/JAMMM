@@ -1,17 +1,20 @@
 .menuFooter{
     background-color: #00DEA3;
+    display: flex;
+    flex-direction: column;
     border-radius: 20%;
     margin: 5%;
     text-align: center;
     position: relative;
     bottom: -45%;
+    align-items: center;
+    align-content: center;
 }
 
 .SignOutButton {
     margin-bottom: 15%;
-    width: 70% !important;
-    margin-left: 10%;
     background-color: #3D8B9C;
+    text-align: center;
     border: none;
     color: #ffffff;
 }

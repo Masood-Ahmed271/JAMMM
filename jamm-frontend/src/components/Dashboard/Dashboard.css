@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Abel&family=Josefin+Sans:wght@300&family=Oswald:wght@300&family=Roboto&display=swap");
 
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
 #components-layout-demo-side {
   height: 32px;
   margin: 16px;
@@ -78,6 +83,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: larger;
 }
 
 .NotificationArea {
@@ -105,7 +111,6 @@ h1 {
   /* width: 300px; */
   height: 100px;
   border-radius: 10%;
-  margin-right: 20px;
   justify-content: center;
   text-align: center;
   /* box-shadow: 1px 2px 9px #F4AAB9; */
@@ -114,26 +119,52 @@ h1 {
 }
 
 .CourseMaterial {
-  background-color: #ffffff;
-  height: 100%;
-  width: 200px;
-  border-radius: 5%;
+  background-color: #b8d1cf;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
   text-align: center;
-  /* box-shadow: 1px 2px 9px #F4AAB9; */
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    #f4aab9 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  padding: 20px;
+  height: 100vh;
+}
+
+.courseDetailsButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 15px;
+    text-align: center;
+    background-color: #3d8b9c;
+    color: white;
+    border: 0;
+}
+
+.courseDetailsButton:hover {
+    background-color: white;
+    color: #00dea3;
+}
+
+.ant-col-2{
+    height: 100%;
 }
 
 .timetable {
-  background-color: #ffffff;
-  height: 100vh;
-  width: 900px;
+  background-color: #dce8e6;
   margin: 10px;
-  border-radius: 5%;
+  padding: 10px;
+  border-radius: 16px;
   text-align: center;
-  /* box-shadow: 1px 2px 9px #F4AAB9; */
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    #f4aab9 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-sizing: border-box;
+}
+
+.ant-row{
+    justify-content: center !important;
+}
+.maindashboard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .upcomingLectures {
@@ -150,8 +181,6 @@ h1 {
     display: flex;
     flex-direction:column;
     text-align: start;
-
-
 }
 
 .upcomingLecsHeading{
@@ -163,6 +192,12 @@ h1 {
 .classInNextHour {
   display: flex;
   justify-content: space-between;
+}
+
+.noClassesHeading{
+    font-size: large;
+    height: "fit-content";
+    padding: "auto";
 }
 
 .classInHour {

@@ -31,7 +31,7 @@ const items = [getItem("Dashboard", "1", <DashboardOutlined />)];
 
 const Dashboard = () => {
   const { state } = useLocation();
-  const { name, date, dashboardData } = state;
+  const { name, date, dashboardData, loginTimeOfUser } = state;
   console.log("Daashboard data inside dashbaord >> ", dashboardData);
   const navigate = useNavigate();
   const [studentDetails, setStudentDetails] = useState(
@@ -73,6 +73,11 @@ const Dashboard = () => {
       ) {
         nextClasses.push(classSchedule[i]);
       }
+      // if (
+      //   time_end - time_start < 3600000
+      // ) {
+      //   nextClasses.push(classSchedule[i]);
+      // }
     }
     // setIsClassInAnHour(true)
     return JSON.stringify(nextClasses);
@@ -80,34 +85,25 @@ const Dashboard = () => {
 
   const columns = [
     {
-      title: "CourseName",
+      title: "Course Name",
       dataIndex: "CourseName",
     },
     {
-      title: "Location",
+      title: "Class Location",
       dataIndex: "Location",
     },
     {
-      title: "ClassTime",
+      title: "Class Time",
       dataIndex: "ClassTime",
     },
     {
-      title: "ClassButton",
+      title: "Details",
       dataIndex: "ClassButton",
       render: (dataIndex) => (
         <Button onClick={() => AllCoursesCourseMaterial(dataIndex)}>
           {" "}
           {dataIndex}{" "}
         </Button>
-      ),
-    },
-    {
-      title: "ShareButton",
-      dataIndex: "ShareButton",
-      render: () => (
-        <>
-          <Share />
-        </>
       ),
     },
   ];
@@ -163,7 +159,7 @@ const Dashboard = () => {
   };
 
   return (
-    <Layout style={{ minHeight: "100vh" }}>
+    <Layout className="layout" style={{ minHeight: "100vh" }}>
       <Sider
         className="sideBar"
         collapsible
@@ -181,7 +177,11 @@ const Dashboard = () => {
           mode="inline"
           items={items}
         />
-        {collapsed ? null : <Signout class="sign_out" />}
+        <div className="signOutInfo">
+          <h3>Time Since Logged In: </h3>
+          <Clock loginTime={{loginTimeOfUser}}/>
+        </div>
+        {collapsed ? null : <Signout className="sign_out" />}
       </Sider>
       <Layout className="site-layout">
         <Header className="Header">
@@ -191,20 +191,14 @@ const Dashboard = () => {
             studentDetailsDate={String(studentDetails.login_date).slice(0, 16)}
             studentDetailsProfile={studentDetails.profile_picture_link}
           />
+        
+        {/* <Clock loginTime={{loginTimeOfUser}}/> */}
         </Header>
         <Content style={{ margin: "0 16px" }}>
           <Row>
-            <Col span={20}>
-              {/* <Row style={{ display: "flex", justifyContent: "center" }}>
-                                <Col span={24}>
-                                    <div className="detailBox">
-                                        <h1>Time Passed Since Logged In</h1>
-                                        <Clock />
-                                    </div>
-                                </Col>
-                            </Row> */}
+            <Col span={20} class="maindashboard">
               <Row>
-                <Col span={20}>
+                <Col span={22}>
                   <div className="upcomingLectures">
                     <div className="upcomingLecsHeading">
                       <h1 style={{ fontsize: "22px" }}>
@@ -224,12 +218,12 @@ const Dashboard = () => {
                             JSON.parse(fetchClassesInHour())
                           )}
                           size="small"
-                          pagination={{ pageSize: 5 }}
+                          pagination={{ pageSize: 3 }}
                         />
                       ) : (
-                        <h4 style={{ height: "fit-content", padding: "auto" }}>
+                        <h4 className="noClassesHeading">
                           {" "}
-                          No classes within the next hour... relax!
+                          No classes... relax!
                         </h4>
                       )}
                     </div>
@@ -237,19 +231,22 @@ const Dashboard = () => {
                 </Col>
               </Row>
               <Row>
-                <Col span={12}>
+                <Col span={22}>
                   <div className="timetable">
-                    <h1>TimeTable</h1>
                     <Calender schedule={classSchedule} />
                   </div>
                 </Col>
               </Row>
             </Col>
-            <Col span={2}>
+
+            <Col span={4} className="materialColumn">
               <div className="CourseMaterial">
                 <h1>Courses Enrolled</h1>
                 {findNumberOfCoursesEnrolled().map((courseName) => (
-                  <Button onClick={() => AllCoursesCourseMaterial(courseName)}>
+                  <Button
+                    className="courseDetailsButton"
+                    onClick={() => AllCoursesCourseMaterial(courseName)}
+                  >
                     {courseName}
                   </Button>
                 ))}

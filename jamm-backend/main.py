@@ -337,6 +337,7 @@ def send_email():
     toaddrs = [toaddr] + cc + bcc
     server = smtplib.SMTP("smtp-mail.outlook.com", 587)
     server.starttls()
+    # This email is used to send emails to the users
     server.login("jammcomp3278@outlook.com", "&&$$123JAMM")
     server.sendmail("jammcomp3278@outlook.com", toaddrs, message)
     server.quit()
