@@ -4,9 +4,7 @@ File Description: This file provides the component for the CourseDetails
 
 */
 import {
-    BellOutlined,
-    LinkOutlined,
-    MessageOutlined,
+    OrderedListOutlined
 } from "@ant-design/icons";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./CourseDetails.css";
@@ -37,7 +35,7 @@ function getItem(label, key, icon, children) {
         label,
     };
 }
-const items = [getItem("Upcoming Deadlines", "1", <BellOutlined />)];
+const items = [getItem("Course Details", "1", <OrderedListOutlined />)];
 
 const CourseDetails = () => {
 
