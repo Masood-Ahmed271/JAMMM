@@ -1,6 +1,7 @@
+import { Button } from "antd";
 import React, {useState, useRef} from "react";
 import './share.css'
-import { Button } from "antd";
+// import { Button } from "antd";
 
 
 
@@ -74,7 +75,8 @@ const Share = (props) => {
 
     return (
         <>
-            <Button onClick={() => (sendEmail(props.course))} > Share </Button>
+            {/* <Button onClick={() => (sendEmail(props.course))} > Share </Button> */}
+            <button onClick={() => (sendEmail(props.course))}> Share </button>
         </>
     );
 };

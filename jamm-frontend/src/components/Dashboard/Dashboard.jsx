@@ -120,6 +120,7 @@ const Dashboard = () => {
             teacher: data.teacher,
             tutorialNotes: data.tutorialNotes,
             zoomLinks: data.zoomLinks,
+            loginTimeOfUser:loginTimeOfUser
           },
         });
       });
@@ -163,8 +164,11 @@ const Dashboard = () => {
         <div className="signOutInfo">
           <h3>Time Since Logged In: </h3>
           <Clock loginTime={{loginTimeOfUser}}/>
+          {collapsed ? null : <Signout className="sign_out" />}
+
         </div>
-        {collapsed ? null : <Signout className="sign_out" />}
+        <div>
+        </div>
       </Sider>
       <Layout className="site-layout">
         <Header className="Header">

@@ -29,6 +29,8 @@ const MessageTable = (props) => {
     }
     return (
         <>
+        <h2 className="tableDescriptionHeadings"> Important Messages</h2>
+        <hr />
         <Table columns={columns} dataSource={fetchMessages(messageData)} size="small" pagination={{pageSize: 3}} scroll={{y: 240}}/>
         </>
     )

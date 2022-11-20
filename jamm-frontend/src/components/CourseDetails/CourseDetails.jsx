@@ -5,6 +5,8 @@ File Description: This file provides the component for the CourseDetails
 */
 import {
     BellOutlined,
+    LinkOutlined,
+    MessageOutlined,
 } from "@ant-design/icons";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./CourseDetails.css";
@@ -22,6 +24,7 @@ import LectureNotesTable from "../Tables/LectureNotesTable";
 import ProfessorTable from "../Tables/ProfessorTable";
 import TATable from "../Tables/TATable";
 import Share from "../Share/Share";
+import Clock2 from "../Clock/Clock2";
 // import 'https://fonts.googleapis.com/css2?family=Abel&display=swap';
 // import './assets/css/fonts.css'
 
@@ -40,14 +43,14 @@ const CourseDetails = () => {
 
     const [collapsed, setCollapsed] = useState(false);
     const { state } = useLocation();
-    const { courseName, name, assignmentDeadlines, lectureNotes, messages2, studentDetails2, teacher, tutorialNotes, zoomLinks } = state;
+    const { courseName, name, assignmentDeadlines, lectureNotes, messages2, studentDetails2, teacher, tutorialNotes, zoomLinks,loginTimeOfUser } = state;
 
     const days = (day) => {
         let weekday = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
         return weekday[day - 1]
     }
 
-    var officeTimingProfessor = days(teacher[0].office_hour_weekday) + " From " + teacher[0].office_hour_start + " To " +teacher[0].office_hour_end
+    var officeTimingProfessor = days(teacher[0].office_hour_weekday) + "s, " + teacher[0].office_hour_start + " to " +teacher[0].office_hour_end
     return (
         <Layout style={{ minHeight: "100vh" }}>
             <Sider
@@ -67,30 +70,54 @@ const CourseDetails = () => {
                     mode="inline"
                     items={items}
                 />
-                {collapsed ? null : (
-                    <Signout />
+                <div className="signOutInfo2">
+                    <h3>Time Since Logged In: </h3>
+                    <Clock2 loginTime={{loginTimeOfUser}}/>
+                    {collapsed ? null : (
+                    <Signout style={{position:"absolute",bottom:"0px"}}/>
                 )}
+                </div>
+
             </Sider>
             <Layout className="site-layout">
                 <Header className="Header">
-                    <CustomHeader name={name} studentDetailsTime={studentDetails2.login_time} studentDetailsDate={studentDetails2.login_date} studentDetailsProfile={studentDetails2.profile_picture_link} />
+                    <CustomHeader name={name} studentDetailsTime={studentDetails2.login_time} studentDetailsDate={String(studentDetails2.login_date).slice(0, 16)} studentDetailsProfile={studentDetails2.profile_picture_link} />
                 </Header>
                 <Content style={{ margin: "0 16px" }}>
                     <div
-                        style={{ display: "flex", flexDirection: "row", marginRight: 10 }}
+                        style={{ display: "flex", flexDirection: "row", marginRight: "56px", marginLeft: "50px", marginBottom:"-20px" }}
                     >
-                        <h1>Course Name {courseName}</h1>
+                        <h1>Course Name</h1>
+                        <span class = "vertical"></span>
+                        <h1 className="lightCourse">{courseName}</h1>
+                        <div style={{marginLeft:'auto', marginBottom:'22px', fontSize:"2.5vh"}} class="shareBTN">
+                            <Share course={courseName}/>
+                        </div>
                     </div>
-                    <div>
-                        <Share course={courseName}/>
-                    </div>
-                    <h1>Instructor Details</h1>
+
+                    {/* <h3 className="tableDescriptionHeadings">Instructor Details</h3> */}
                     <Row className="CourseBoxes twoBoxes" >
-                        <Col span={10}>
+                        <Col span={12} class="format">
                             <ProfessorTable title={teacher[0].title} name={teacher[0].name} role={teacher[0].role} Email={teacher[0].email} location={teacher[0].office_location} officeTiming={officeTimingProfessor}/>
+                            
                         </Col>
-                        <Col span={10}>
+                        <span class="verticleBig"></span>
+                        <Col span={11}>
                         <TATable title={teacher[1].title} name={teacher[1].name} role={teacher[1].role} Email={teacher[1].email} location={teacher[1].office_location} officeTiming={officeTimingProfessor}/>
+                        </Col>
+                    </Row>
+                    <Row className="CourseBoxes twoBoxes">
+                        <Col span={12} >
+                            <LectureZoomLinkTable link={zoomLinks.lectureZoomLink} meetingId={zoomLinks.lectureZoomMeetingId} password={zoomLinks.lectureZoomMeetingPassword} />
+                        </Col>
+                        <span class="verticleBig"></span>
+                        <Col span={11}>
+                            <TutorialZoomLinkTable link={zoomLinks.tutorialZoomLink} meetingId={zoomLinks.tutorialZoomMeetingId} password={zoomLinks.tutorialZoomMeetingPassword} />
+                        </Col>
+                    </Row>
+                    <Row className="CourseBoxes">
+                        <Col span={24}>
+                            <AssignmentTable assignment={assignmentDeadlines} />
                         </Col>
                     </Row>
                     <Row className="CourseBoxes">
@@ -98,29 +125,13 @@ const CourseDetails = () => {
                             <MessageTable message={messages2} class="msgTable" />
                         </Col>
                     </Row>
-                    <Row className="CourseBoxes">
-                        <Col span={24}>
-                            <AssignmentTable assignment={assignmentDeadlines} />
-                        </Col>
-
-                    </Row>
                     <Row className="CourseBoxes twoBoxes">
-                        <Col span={10} >
-                            <LectureZoomLinkTable link={zoomLinks.lectureZoomLink} meetingId={zoomLinks.lectureZoomMeetingId} password={zoomLinks.lectureZoomMeetingPassword} />
+                        <Col span={12}>
+                            <LectureNotesTable ClassMaterialData={lectureNotes} name="Lecture" />
                         </Col>
-                        <Col span={10}>
-                            <TutorialZoomLinkTable link={zoomLinks.tutorialZoomLink} meetingId={zoomLinks.tutorialZoomMeetingId} password={zoomLinks.tutorialZoomMeetingPassword} />
-                        </Col>
-                    </Row>
-
-                    <Row className="CourseBoxes twoBoxes">
-                        <Col span={10}>
-                            Lecture Notes
-                            <LectureNotesTable ClassMaterialData={lectureNotes} />
-                        </Col>
-                        <Col span={10}>
-                            Tutorial Notes
-                            <LectureNotesTable ClassMaterialData={tutorialNotes} />
+                        <span className="verticleBig"></span>
+                        <Col span={11}>
+                            <LectureNotesTable ClassMaterialData={tutorialNotes} name="Tutorial" />
                         </Col>
                     </Row>
                 </Content>

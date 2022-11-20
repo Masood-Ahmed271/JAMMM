@@ -11,7 +11,7 @@ const AssignmentTable = (props) => {
             dataIndex: 'Deadline',
           },
         {
-          title: 'Assignment Name',
+          title: 'Item',
           dataIndex: 'Assignment',
         },
       ];
@@ -29,6 +29,8 @@ const AssignmentTable = (props) => {
     }
     return (
         <>
+        <h2 className="tableDescriptionHeadings"> Assessment Deadlines </h2> 
+        <hr className="small"/>
         <Table columns={columns} dataSource={fetchAssignment(AssignmentData)} size="small" pagination={{pageSize: 3}} scroll={{y: 240}}/>
         </>
     )

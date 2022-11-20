@@ -8,6 +8,10 @@ const TATable = (props) => {
             title: 'Teaching Assistant',
             dataIndex: 'professor',
           },
+        {
+          title: 'Des',
+          dataIndex: 'Des',
+        },
       ];
 
 
@@ -15,30 +19,35 @@ const TATable = (props) => {
         var dataOfMessages = [
             {
             "key": 1,
-            "professor": "Name: " + props.title + props.name
+            "professor": "TA Name: " ,
+            "Des": props.title + props.name
         },
             {
             "key": 2,
-            "professor": "Role: " + props.role
+            "professor": "Role: ",
+            "Des": props.role
         },
             {
             "key": 3,
-            "professor": "Email: " + props.Email
+            "professor": "Email: ",
+            "Des": props.Email
         },
             {
             "key": 4,
-            "professor": "Location: " + props.location
+            "professor": "Location: ",
+            "Des": props.location
         },
             {
             "key": 5,
-            "professor": "Office Timings: " + props.officeTiming
-        },
+            "professor": "Office Timings: ",
+            "Des": props.officeTiming
+        }
     ]
         return dataOfMessages;
     }
     return (
         <>
-        <Table columns={columns} dataSource={fetchMessages()} size="small"/>
+        <Table columns={columns} dataSource={fetchMessages()} size="small" showHeader={false}/>
         </>
     )
 }

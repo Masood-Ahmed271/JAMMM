@@ -4,7 +4,7 @@ import { Table } from "antd";
 const LectureNotesTable = (props) => {
 
     const ClassMaterial = props.ClassMaterialData
-
+    console.log(props.ClassMaterialData);
     const columns = [
         {
             title: 'Class Material',
@@ -15,8 +15,8 @@ const LectureNotesTable = (props) => {
             dataIndex: 'Link',
             render: (dataIndex) => (
                 <>
-                    <form action={dataIndex}>
-                        <button class="">Click</button>
+                    <form action={dataIndex} style={{display:"flex",justifyContent:"end"}}>
+                        <button class="">Access</button>
                     </form>
                 </>
             )
@@ -36,7 +36,8 @@ const LectureNotesTable = (props) => {
     }
     return (
         <>
-            <Table columns={columns} dataSource={fetchAssignment(ClassMaterial)} size="small" pagination={{ pageSize: 3 }} scroll={{ y: 240 }} />
+            <h2 className="colHead"> {props.name} Materials</h2>
+            <Table columns={columns} dataSource={fetchAssignment(ClassMaterial)} size="small" pagination={{ pageSize: 3 }} scroll={{ y: 240 }} showHeader={false}/>
         </>
     )
 }

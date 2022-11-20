@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Josefin+Sans:wght@300&family=Montserrat&family=Oswald:wght@300&family=Roboto&display=swap');
+
+*{
+    font-family: 'Montserrat', sans-serif;
+}
 
 #components-layout-demo-side {
     height: 32px;
@@ -25,15 +29,77 @@
     color: #00DEA3 !important;
 }
 
-.menuFooter{
+
+
+.vertical {
+    border-left: 1px solid #E4E6EE;
+    height: 30px;
+    margin: 10px;
+    display: inline-block;
+}
+
+
+button{
+    border: none;
+    outline: none;
+    background: rgba(10, 234, 163, 0.2);
+    border-radius: 16px;
+    padding: 2px 15px;
+    color: #36846f;
+    transition: 0.35s ease;
+}
+
+button:hover{
+    background: rgba(36, 193, 143, 0.416);
+    cursor: pointer;
+    color: #ffffff;
+
+
+
+}
+
+.lightCourse{
+    font-family: Roboto, 'Times New Roman', Times, serif;
+    font-size: 1.3em;
+    opacity: 0.8;
+    color: #3a3f3d;
+    padding-top: 10px;
+}
+
+.menuFooter2{
     background-color: #00DEA3;
     border-radius: 20%;
-    margin: 9px;
+    margin: 15px;
+
     padding: 15px;
     width: 90%;
     text-align: center;
+    position:sticky;
+    
+}
+
+.menuFooter{
+    background-color: #00DEA3;
+    border-radius: 20%;
+    margin: 15px;
+
+    padding: 15px;
+    width: 90%;
+    text-align: center;
+    position:sticky;
+    
+}
+
+.signOutInfo2 {
     position: absolute;
     bottom: 5%;
+    left: 5%;
+    text-align: center;
+}
+
+.signOutInfo {
+    bottom: 5%;
+
 }
 
 .SignOutButton {
@@ -81,15 +147,10 @@
 }
 
 #Name{
-
-    /* width: 287px;
-    height: 43px; */
     font-family: 'Abel';
     font-weight: 500;
     font-size: 22px;
     line-height: 5px;
-    
-    
 }
 
 #loginDetails{
@@ -99,19 +160,65 @@
 
 .CourseBoxes{
     background-color: #ffffff;
-    margin: 5%;
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
     padding: 10px;
-    /* height: 30vh; */
     margin-bottom: 2%;
-    border-radius: 20px;
+    border-radius: 12px;
     text-align: center;
     display: flex;
     height: fit-content;
-    /* box-shadow: 1px 2px 9px #F4AAB9; */
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, #F4AAB9 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    
+}
+
+.ant-table-tbody{
+    font-family: Josefin+Sans, 'Times New Roman', Times, serif ;
+}
+
+.ant-col-10{
+    display: flex !important;
+    justify-content: space-evenly !important;
+    margin-right: 5px auto;
 }
 
 .twoBoxes{
-    justify-content: space-evenly;
+    justify-content: space-between;
     object-fit: contain;
+}
+
+.verticleBig{
+    width: 1px;
+    height: 202px;
+    background: #EFF0F4;
+    border-left: 3px solid #EFF0F4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px auto;
+}
+
+.tableDescriptionHeadings{
+    display: block !important;
+    /* justify-content: center; */
+    
+}
+
+hr{
+    width: 10%;
+    text-align: center;
+    position: relative;
+    top: -5px;
+    margin: 5px auto;
+    border: 2px solid #3a3f3d3f;
+
+}
+
+.colHead{
+    text-align: left;
+    font-weight: 700;
+}
+
+.icon{
+    margin-right: 1%;
 }
