@@ -6,6 +6,7 @@ jamm-backend/data/
 jamm-backend/train.yml
 jamm-backend/labels.pickle
 jamm-backend/__pycache__/faces.cpython-39.pyc
+Self-notes.txt
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
