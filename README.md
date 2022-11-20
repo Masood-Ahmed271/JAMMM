@@ -89,7 +89,7 @@ If output is like `('Hello ', {name}, 'You did attendance today')` then the face
 
 #### Importing Database
 
-Open mysql server and import the file `init.sql`.
+Open mysql server and import the file `RealFinal.sql`.
 
 ```
 # login the mysql command
