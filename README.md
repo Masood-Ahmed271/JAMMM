@@ -97,8 +97,8 @@ mysql -u root -p
 
 # create database.  'mysql>' indicates we are now in the mysql command line
 
-# import from sql file. Replace the filename `RealFinal.sql` with the path to init.sql file on your local system
-mysql> source init.sql
+# import from sql file. Replace the filename `RealFinal.sql` with the path to RealFinal.sql file on your local system
+mysql> source RealFinal.sql
 ```
 
 ## Finally Running the Backend:
