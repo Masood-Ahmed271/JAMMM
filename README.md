@@ -119,4 +119,8 @@ Then run the following command:
 npm start
 ```
 
+# Important Note:
+ While running, if some of the libraries are missing, do install them via `pip install {library-name}` or `npm install {library-name}`.
+ 
+
 Thank you for reading. Enjoy the app! Stay happy and stay safe :)
