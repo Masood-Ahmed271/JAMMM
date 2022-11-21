@@ -97,7 +97,7 @@ mysql -u root -p
 
 # create database.  'mysql>' indicates we are now in the mysql command line
 
-# import from sql file. Replace the filename `init.sql` with the path to init.sql file on your local system
+# import from sql file. Replace the filename `RealFinal.sql` with the path to init.sql file on your local system
 mysql> source init.sql
 ```
 
