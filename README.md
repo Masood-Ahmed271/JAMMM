@@ -1,4 +1,4 @@
-# JAMM - A COMP3278 Project
+# JAMMM - A COMP3278 Project
 *Link To Demo Video:* <a href="https://youtu.be/5eBuB9qOC-Q"> https://youtu.be/5eBuB9qOC-Q </a>
 ## Contributors:
 ---
