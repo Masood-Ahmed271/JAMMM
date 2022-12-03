@@ -122,5 +122,11 @@ npm start
 # Important Note:
  While running, if some of the libraries are missing, do install them via `pip install {library-name}` or `npm install {library-name}`.
  
+# Feedback
+
+Pull requests are welcome. For feedback and suggestions, please reach out to Group 21.
+
+# License
+COMP3278 Group 21 2022 © The University of Hong Kong
 
 Thank you for reading. Enjoy the app! Stay happy and stay safe :)
